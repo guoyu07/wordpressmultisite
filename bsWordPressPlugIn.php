@@ -18,28 +18,18 @@ function widget_coming_next_init() {
 }
 
 function widget_bsWordPressPlugIn(){
-  echo "<div class=\"fat-wide\">Ah ha, I am a widiget igit</div>";
+  echo "<div class=\"widefat\">Ah ha, I am a widiget igit</div>";
 }
 
 function bs_widget_control() {
-  $options = get_option(bsWordPressPlugIn_ID);
-  if (!is_array($options)) {
-    $options = array();
-  }
- 
   $widget_data = $_POST[bsWordPressPlugIn_ID];
   if ($widget_data['submit']) {
     $options['siteName'] = $widget_data['siteName'];
     $options['adminName'] = $widget_data['adminName'];
     $options['adminPassword'] = $widget_data['adminPassword'];
  
-    update_option(bsWordPressPlugIn_ID, $options);
+    shell_exec("wp.sh $options['siteName'] $options['adminName'] $options['adminPassword']")
   }
- 
-  // Render form
-  $num_posts = $options['num_posts'];
-  $coming_up_text = $options['coming_up_text'];
-  $show_excerpt = $options['show_excerpt'];
    
   // The HTML form will go here
   ?>

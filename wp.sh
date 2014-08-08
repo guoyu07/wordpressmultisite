@@ -1,7 +1,7 @@
 #!/bin/bash
 BASE = "base"
-mkdir -p "$BASE/$1"
 
+mkdir -p "$BASE/$1"
 cd "$BASE/$1"
 
 #download wordpress
@@ -22,11 +22,7 @@ cp wp-config-sample.php wp-config.php
 sed -e "s/database_name_here/$1/g" wp-config.php
 sed -e "s/username_here/$2/g" wp-config.php
 sed "s/password_here/$3/g" wp-config.php
-#create uploads folder and set permissions
-mkdir wp-content/uploads
-chmod 777 wp-content/uploads
 #remove zip file
 rm latest.tar.gz
-#remove bash script
-rm wp.sh
+
 fi

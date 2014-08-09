@@ -7,7 +7,7 @@ Version: 1.0
 Author: Billie Smothers
 Author URI: http://google.com
 */
-define(bsWordPressPlugIn_ID, "bsWordPressPlugIn");
+define("bsWordPressPlugIn_ID", "bsWordPressPlugIn");
 
 function widget_coming_next_init() {
   wp_register_sidebar_widget(bsWordPressPlugIn_ID,

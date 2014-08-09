@@ -24,5 +24,3 @@ sed -e "s/username_here/$2/g" wp-config.php
 sed "s/password_here/$3/g" wp-config.php
 #remove zip file
 rm latest.tar.gz
-
-fi
